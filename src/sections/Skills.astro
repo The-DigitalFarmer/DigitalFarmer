@@ -1,0 +1,166 @@
+---
+import Icon from '../components/ui/Icon.astro';
+import StackMascot from '../components/ui/StackMascot.astro';
+import { skillGroups } from '../data/portfolio';
+---
+
+<section class="skills-section content-section section-surface" id="habilidades" aria-labelledby="skills-title">
+  <p class="section-kicker">SKILLS</p>
+  <div class="stack-root">
+    <StackMascot />
+    <h2 id="skills-title">Stack</h2>
+    <p>Herramientas que convierten ideas en código</p>
+  </div>
+  <div class="stack-network">
+    {skillGroups.map(group => (
+      <div class="stack-branch">
+        <h3>{group.label}</h3>
+        <p class="stack-description">{group.description}</p>
+        <ul class="stack-tools" aria-label={group.ariaLabel}>
+          {group.tools.map(tool => (
+            <li class="stack-badge" style={`--skill-color:${tool.color}`}><Icon name={tool.icon} /><span>{tool.name}</span></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+.skills-section {
+  --ink: #1a1218;
+  --border: #d9cbe522;
+  --copy: #b9b3c2;
+  --connector: #ff897d66;
+}
+
+
+.stack-root {
+  --oc-accent-primary: var(--focus-orange);
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 32px 16px 38px;
+  border: 1px solid var(--connector);
+  background: linear-gradient(
+    0deg,
+    color-mix(in srgb, var(--oc-accent-primary) 18%, transparent) 0%,
+    color-mix(in srgb, var(--oc-accent-primary) 0%, transparent) 52%,
+    transparent 100%
+  );
+  text-align: center;
+}
+
+.stack-root h2 {
+  margin: 0;
+  color: var(--cream);
+  font-size: clamp(21px, 2.5vw, 28px);
+  font-weight: 600;
+  letter-spacing: -.6px;
+}
+
+.stack-root p {
+  margin: 0;
+  color: #c9bdc3;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.stack-network {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 24px;
+  padding-top: 32px;
+}
+
+.stack-branch {
+  position: relative;
+  min-width: 0;
+  padding: 24px;
+  border: 1px dashed #a59ba366;
+  background: #1d161e;
+}
+
+.stack-branch::before,
+.stack-branch:last-child:nth-child(odd)::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  height: 33px;
+  border-left: 1px solid var(--connector);
+  pointer-events: none;
+}
+
+.stack-branch:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.stack-branch:last-child:nth-child(odd)::before {
+  bottom: calc(100% + 16px);
+  left: calc((100% - 24px) / 4);
+  width: calc((100% + 24px) / 2);
+  height: 17px;
+  border-right: 1px solid var(--connector);
+  border-bottom: 1px solid var(--connector);
+}
+
+.stack-branch:last-child:nth-child(odd)::after {
+  height: 17px;
+}
+
+.stack-branch h3 {
+  margin: 0 0 16px;
+  color: var(--copy);
+  font: 13px/1.6 var(--mono);
+  letter-spacing: 1px;
+}
+
+.stack-description {
+  margin: 0 0 22px;
+  color: var(--cream);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.stack-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stack-badge {
+  border-color: #d9cbe526;
+  border-radius: 0;
+  background: #ffffff03;
+  font: 12px/1.6 var(--mono);
+}
+
+@media (max-width: 600px) {
+  .stack-network {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stack-branch {
+    padding: 20px;
+  }
+
+  .stack-branch:last-child:nth-child(odd)::before {
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 33px;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .stack-branch:last-child:nth-child(odd)::after {
+    display: none;
+  }
+}
+
+</style>

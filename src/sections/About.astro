@@ -1,0 +1,249 @@
+---
+import { cvUrl, focusAreas } from '../data/portfolio';
+---
+
+<section class="about-section content-section section-surface" id="sobre-mi" aria-labelledby="about-title">
+  <p class="section-kicker">ABOUT</p>
+  <div class="focus-grid">
+    <header class="focus-intro">
+      <h2 id="about-title"><span>Deep</span> <span>Focus</span></h2>
+      <p class="focus-intro-copy">Del problema al código: así pienso, construyo y sigo aprendiendo.</p>
+      {cvUrl ? (
+        <a class="cv-button" href={cvUrl} target="_blank" rel="noopener noreferrer">Ver CV</a>
+      ) : (
+        <button class="cv-button" type="button" disabled>Ver CV</button>
+      )}
+    </header>
+
+    {focusAreas.map(area => (
+      <article class="focus-card">
+        <p class="focus-label">{area.label}</p>
+        <h3>{area.title}</h3>
+        <p class="focus-description">{area.description}</p>
+        <ul class="focus-tags" aria-label={`Enfoques de ${area.title.toLowerCase()}`}>
+          {area.tags.map(tag => <li>{tag}</li>)}
+        </ul>
+      </article>
+    ))}
+
+    <nav class="focus-links" aria-label="Explorar el portafolio">
+      <a href="#habilidades">Explora mi stack <span aria-hidden="true">↗</span></a>
+      <a href="#proyectos">Ver proyectos <span aria-hidden="true">↗</span></a>
+      <a href="#contacto">Conversemos <span aria-hidden="true">→</span></a>
+    </nav>
+  </div>
+</section>
+
+<style>
+.about-section {
+  --ink: #1d161e;
+  --border: #ffffff24;
+  --copy: #a6a6a6;
+  --oc-accent-primary: var(--focus-orange);
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: .9fr 1fr 1fr;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.focus-intro,
+.focus-card {
+  min-width: 0;
+  padding: clamp(24px, 3vw, 36px);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: #1a1218;
+}
+
+.focus-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  grid-row: span 2;
+  background-image: radial-gradient(circle, #ffffff0d 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+.focus-label {
+  margin: 0 0 28px;
+  color: #949494;
+  font: 10px/1.7 var(--mono);
+  letter-spacing: 1px;
+}
+
+.focus-intro h2 {
+  margin: 0 0 28px;
+  color: var(--focus-orange);
+  font-size: clamp(42px, 4.5vw, 64px);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.focus-intro h2 span {
+  display: block;
+}
+
+.focus-intro-copy {
+  margin: 0 0 40px;
+  color: var(--copy);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: auto;
+  padding: 14px 26px;
+  border: 1px solid #f5f5f5;
+  border-radius: 0;
+  background: #f5f5f5;
+  color: #0c0c0c;
+  font: 700 13px/1.5 var(--mono);
+  transition: background .2s, border-color .2s;
+}
+
+.cv-button:disabled {
+  cursor: default;
+}
+
+.cv-button[href]:hover {
+  border-color: var(--focus-orange);
+  background: var(--focus-orange);
+}
+
+.focus-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+}
+
+.focus-card::before {
+  content: '';
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    0deg,
+    color-mix(in srgb, var(--oc-accent-primary) 18%, transparent) 0%,
+    color-mix(in srgb, var(--oc-accent-primary) 7%, transparent) 52%,
+    transparent 100%
+  );
+  height: 66%;
+  transition: opacity .22s;
+  position: absolute;
+  inset: auto 0 0;
+}
+
+.focus-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.focus-card:hover::before {
+  opacity: 1;
+}
+
+.focus-card h3 {
+  margin: 0 0 20px;
+  color: #f5f5f5;
+  font-size: clamp(19px, 2vw, 23px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.5px;
+  text-wrap: balance;
+}
+
+.focus-description {
+  margin: 0 0 32px;
+  color: var(--copy);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+  color: #949494;
+  font: 10px/1.7 var(--mono);
+}
+
+.focus-links {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+.focus-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 18px clamp(24px, 3vw, 36px);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  color: #949494;
+  font: 10px/1.7 var(--mono);
+  transition: color .2s, background .2s;
+}
+
+.focus-links a:hover {
+  background: #ffffff04;
+  color: var(--focus-orange);
+}
+
+@media (max-width: 900px) {
+  .focus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .focus-intro {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .focus-intro h2 span {
+    display: inline;
+  }
+
+  .focus-intro-copy {
+    max-width: 38ch;
+    margin-bottom: 28px;
+  }
+
+  .focus-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .focus-links a {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .focus-grid,
+  .focus-links {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .focus-intro h2 {
+    font-size: clamp(36px, 10vw, 48px);
+  }
+
+  .focus-links a {
+    min-height: 56px;
+    padding-inline: 24px;
+  }
+}
+</style>

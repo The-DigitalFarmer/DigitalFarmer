@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" shape-rendering="geometricPrecision" role="img" aria-labelledby="title desc">
+  <title id="title">Ornitorrinco Cabrera</title>
+  <desc id="desc">Ornitorrinco verde turquesa #0a9386 con expresión seria, párpados bajos, pico cerrado, manos bajas y gorra CABRERA. Fondo transparente.</desc>
+  <defs>
+    <linearGradient id="fur" x1="25%" y1="0%" x2="75%" y2="100%">
+      <stop stop-color="#086C63"/>
+      <stop offset=".32" stop-color="#0a9386"/>
+      <stop offset=".72" stop-color="#086B61"/>
+      <stop offset="1" stop-color="#043F39"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop stop-color="#C2B89E"/>
+      <stop offset=".45" stop-color="#E4D6B9"/>
+      <stop offset="1" stop-color="#F7E6C4"/>
+    </linearGradient>
+    <radialGradient id="bill" cx="115" cy="132" r="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A08264"/>
+      <stop offset=".55" stop-color="#795A43"/>
+      <stop offset="1" stop-color="#4D3429"/>
+    </radialGradient>
+    <radialGradient id="cap" cx="104" cy="49" r="85" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF0D8"/>
+      <stop offset=".35" stop-color="#E7D3B3"/>
+      <stop offset=".72" stop-color="#D2BA94"/>
+      <stop offset="1" stop-color="#9C805F"/>
+    </radialGradient>
+    <radialGradient id="cap-brown" cx="30%" cy="20%" r="85%">
+      <stop stop-color="#927054"/>
+      <stop offset=".45" stop-color="#634337"/>
+      <stop offset="1" stop-color="#33231D"/>
+    </radialGradient>
+    <linearGradient id="visor" x1="95" y1="77" x2="145" y2="99" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9B7655"/>
+      <stop offset=".45" stop-color="#6D493B"/>
+      <stop offset="1" stop-color="#3E2A22"/>
+    </linearGradient>
+    <radialGradient id="arm" cx="30%" cy="25%" r="85%">
+      <stop stop-color="#4AB6A9"/>
+      <stop offset=".4" stop-color="#0a9386"/>
+      <stop offset="1" stop-color="#087266"/>
+    </radialGradient>
+    <radialGradient id="hand" cx="35%" cy="25%" r="80%">
+      <stop stop-color="#82644E"/>
+      <stop offset=".45" stop-color="#705042"/>
+      <stop offset="1" stop-color="#573D31"/>
+    </radialGradient>
+    <radialGradient id="feet" cx="35%" cy="20%" r="80%">
+      <stop stop-color="#795D49"/>
+      <stop offset=".45" stop-color="#66483D"/>
+      <stop offset="1" stop-color="#573D31"/>
+    </radialGradient>
+    <radialGradient id="tail" cx="35%" cy="20%" r="85%">
+      <stop stop-color="#89694D"/>
+      <stop offset=".4" stop-color="#72503D"/>
+      <stop offset="1" stop-color="#573D2D"/>
+    </radialGradient>
+    <radialGradient id="cheeks" cx="38%" cy="20%" r="85%">
+      <stop stop-color="#EED9BA"/>
+      <stop offset=".5" stop-color="#E1C6A0"/>
+      <stop offset="1" stop-color="#C6AD89"/>
+    </radialGradient>
+    <filter id="contact-shadow" x="-15%" y="-30%" width="130%" height="170%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="2.2" flood-color="#302015" flood-opacity=".2"/>
+    </filter>
+    <radialGradient id="eye" cx="30%" cy="20%" r="85%">
+      <stop stop-color="#4A433B"/>
+      <stop offset=".4" stop-color="#201B19"/>
+      <stop offset="1" stop-color="#080605"/>
+    </radialGradient>
+    <linearGradient id="sheen" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop stop-color="#FFFFFF" stop-opacity=".52"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="soft-sheen" x1="30%" y1="0%" x2="65%" y2="100%">
+      <stop stop-color="#FFFFFF" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ground-shadow" x="-30%" y="-100%" width="160%" height="300%">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <clipPath id="body-clip">
+      <use href="#body-surface"/>
+    </clipPath>
+  </defs>
+
+  <ellipse cx="132" cy="237" rx="76" ry="7" fill="#000000" opacity=".2" filter="url(#ground-shadow)"/>
+  <g id="mascot-art">
+  <!-- Broad, simple paddle tail and little webbed feet. -->
+  <path fill="url(#tail)" d="M175 183C194 164 225 166 234 180C248 202 217 228 182 220Z"/>
+  <path fill="url(#soft-sheen)" d="M188 184C202 172 224 174 229 183C231 191 219 197 206 198C194 199 184 193 188 184Z"/>
+  <path d="M199 184L219 201M188 194L207 212M213 181L192 206M227 187L205 215" stroke="#89694D" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+  <path fill="url(#feet)" d="M88 218C77 224 68 230 70 235C72 239 94 239 109 233L111 218ZM149 219L149 233C163 240 188 240 190 235C191 230 175 222 165 219Z"/>
+
+  <!-- Layered vector gradients and translucent highlights, inspired by Tux. -->
+  <path id="body-surface" fill="url(#fur)" stroke="#064C44" stroke-width=".7" d="M129 73C165 73 188 96 189 126C190 143 180 153 176 164C180 177 188 194 184 211C181 226 166 234 149 231C138 229 121 229 108 232C89 236 71 226 69 208C67 190 75 173 80 161C66 152 62 139 65 122C69 94 91 74 129 73Z"/>
+  <g clip-path="url(#body-clip)">
+  <path fill="url(#sheen)" d="M79 105C83 91 100 84 119 85C135 85 147 91 145 98C141 107 119 111 100 112C87 112 77 111 79 105Z"/>
+  <path fill="url(#soft-sheen)" d="M72 122C69 134 75 147 84 153C89 157 91 165 85 164C71 158 63 143 67 129C68 124 70 121 72 122Z"/>
+  </g>
+  <path fill="url(#cream)" d="M125 141C148 140 161 161 164 187C168 211 158 224 131 224C103 224 89 214 92 191C95 165 104 143 125 141Z"/>
+  <path fill="url(#sheen)" d="M102 166C110 157 135 157 145 166C153 173 152 185 143 192C132 200 113 196 104 188C97 182 97 172 102 166Z"/>
+
+  <!-- The raised flipper now rests beside the belly. -->
+  <path fill="url(#arm)" filter="url(#contact-shadow)" d="M88 159C76 161 72 173 79 183C84 190 96 195 105 189L101 177C91 175 89 169 88 159Z"/>
+  <path fill="url(#soft-sheen)" d="M82 164C77 165 79 174 86 178C91 181 95 180 93 177C88 173 85 170 82 164Z"/>
+  <g filter="url(#contact-shadow)"><path fill="url(#hand)" d="M99 177C105 173 113 178 117 183C121 189 116 194 110 191C113 196 109 200 104 196L94 187C91 183 94 179 99 177Z"/></g>
+  <path fill="url(#arm)" filter="url(#contact-shadow)" d="M168 159C180 161 184 173 177 183C172 190 160 195 151 189L155 177C165 175 167 169 168 159Z"/>
+  <path fill="url(#soft-sheen)" d="M173 164C179 169 177 176 172 180C168 182 163 182 163 179C168 175 171 170 173 164Z"/>
+  <g filter="url(#contact-shadow)"><path fill="url(#hand)" d="M157 177C151 173 143 178 139 183C135 189 140 194 146 191C143 196 147 200 152 196L162 187C165 183 162 179 157 177Z"/></g>
+
+  <!-- Cream cheeks, dot eyes, broad platypus bill. -->
+  <path fill="url(#cheeks)" filter="url(#contact-shadow)" d="M84 125C91 118 105 121 111 129L126 136L146 129C153 121 169 121 176 130C186 144 173 156 157 157C144 159 134 153 128 150C119 155 110 160 97 155C82 152 75 136 84 125Z"/>
+  <path fill="url(#eye)" d="M96.2 114L111.8 117.5C111.2 122.4 108.4 126 104 126C99.6 126 96 121.5 96.2 114Z"/>
+  <path fill="url(#eye)" d="M145.2 117.5L160.8 114C161 121.5 157.4 126 153 126C148.6 126 145.8 122.4 145.2 117.5Z"/>
+  <circle cx="106" cy="120" r="1.6" fill="#FFFAEF"/>
+  <circle cx="151" cy="120" r="1.6" fill="#FFFAEF"/>
+  <path d="M97 114L111 117M146 117L160 114" stroke="#08675D" stroke-width="1.5" stroke-linecap="round"/>
+  <g filter="url(#contact-shadow)"><path fill="url(#bill)" d="M126 126C136 124 141 130 150 132C160 135 169 135 170 141C171 147 156 149 146 148L125 146C113 147 90 149 87 143C84 137 95 135 105 133C114 131 117 127 126 126Z"/></g>
+  <path fill="url(#soft-sheen)" d="M101 135C112 130 131 129 143 134C146 135 139 138 126 138C112 138 101 138 101 135Z"/>
+  <ellipse cx="117" cy="134" rx="2" ry="1.3" fill="#483831"/>
+  <ellipse cx="139" cy="134" rx="2" ry="1.3" fill="#483831"/>
+
+  <!-- Cream-front, brown-back trucker cap. -->
+  <path fill="url(#cap-brown)" d="M124 38C165 35 184 59 183 91L148 85L126 53Z"/>
+  <path d="M158 49L165 78M169 59L174 83" stroke="#7D5D47" stroke-width="2" stroke-linecap="round"/>
+  <path fill="url(#cap)" d="M72 82C74 54 94 35 124 36C151 37 165 54 164 83C137 74 105 74 72 82Z"/>
+  <ellipse cx="124" cy="36" rx="6" ry="3" fill="url(#cap-brown)"/>
+  <path fill="url(#cap)" stroke="#795541" stroke-width="2" d="M91 55Q123 43 150 57L149 72Q121 66 91 73Z"/>
+  <!-- CABRERA is drawn as paths; no fonts or embedded raster images. -->
+  <g stroke="#624334" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-label="CABRERA">
+    <path d="M103 57H100Q98 57 98 60V62Q98 65 100 65H103M106 65L108.5 57L111 65M107 62H110M115 65V57H117Q121 57 119 61Q122 65 117 65ZM115 61H117M124 65V57H127Q131 57 129 61L125 61M127 61L130 65M139 57H134V65H139M134 61H138M143 65V57H146Q150 57 148 61H144M146 61L149 65M152 65L154.5 57L157 65M153 62H156" transform="translate(10 0) scale(.84 .98)"/>
+  </g>
+  <g filter="url(#contact-shadow)"><path fill="url(#visor)" d="M70 80C100 69 138 74 163 84L182 91C169 97 154 94 139 90C113 83 88 83 71 89C58 94 55 85 70 80Z"/></g>
+  </g>
+
+</svg>

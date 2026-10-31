@@ -1,0 +1,47 @@
+---
+import type { IconName } from '../../data/portfolio';
+import pythonLogo from '../../assets/skills/logos/python.svg?url';
+import fastapiLogo from '../../assets/skills/logos/fastapi.png?url';
+import postmanLogo from '../../assets/skills/logos/postman.svg?url';
+import dockerLogo from '../../assets/skills/logos/docker.png?url';
+import gitLogo from '../../assets/skills/logos/git.svg?url';
+import githubLogo from '../../assets/skills/logos/github.svg?url';
+import vscodeLogo from '../../assets/skills/logos/vscode.png?url';
+import redisLogo from '../../assets/skills/logos/redis.png?url';
+import claudeCodeLogo from '../../assets/skills/logos/claude-code.svg?url';
+import codexLogo from '../../assets/skills/logos/codex.png?url';
+import cursorLogo from '../../assets/skills/logos/cursor.svg?url';
+import openCodeLogo from '../../assets/skills/logos/open-code.png?url';
+
+interface Props {
+  name: IconName;
+}
+
+const { name } = Astro.props;
+const logoFiles: Record<IconName, string> = {
+  python: pythonLogo,
+  fastapi: fastapiLogo,
+  postman: postmanLogo,
+  docker: dockerLogo,
+  git: gitLogo,
+  github: githubLogo,
+  vscode: vscodeLogo,
+  redis: redisLogo,
+  'claude-code': claudeCodeLogo,
+  codex: codexLogo,
+  cursor: cursorLogo,
+  'open-code': openCodeLogo,
+};
+---
+
+<img class="tool-logo" src={logoFiles[name]} alt="" aria-hidden="true" width="20" height="20" loading="lazy" decoding="async" />
+
+<style>
+.tool-logo {
+  display: block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+</style>

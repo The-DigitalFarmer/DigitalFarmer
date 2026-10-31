@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import '../styles/shared.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import mascotUrl from '../assets/shared/stack-mascot.svg?url';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'The-DigitalFarmer',
+  description = 'El universo digital de Yerson: Python, APIs y herramientas para construir nuevas ideas. Portafolio de The-DigitalFarmer.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <meta name="theme-color" content="#120e20" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" href={mascotUrl} type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#inicio">Ir al contenido</a>
+    <Header />
+    <main>
+      <slot name="home" />
+      <div class="content-frame"><slot /></div>
+    </main>
+    <div class="content-frame content-frame--end">
+      <Footer />
+    </div>
+  </body>
+</html>
