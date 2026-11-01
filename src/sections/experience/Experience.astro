@@ -1,0 +1,66 @@
+---
+import { experiences } from './data';
+---
+
+<section class="experience-section content-section section-surface" id="experiencia" aria-labelledby="experience-title">
+  <p class="section-kicker">EXPERIENCE</p>
+  <div class="section-header">
+    <h2 class="content-title" id="experience-title">I was born programming</h2>
+    <span class="caption">DISPONIBLE</span>
+  </div>
+  <div class="content-grid">
+    {experiences.map(experience => (
+      <article class="experience-entry">
+        <header class="entry-summary">
+          <span class="caption">{experience.dates}</span>
+          <h3>{experience.title}</h3>
+          <span class="entry-company">{experience.company} <span>{experience.arrangement}</span></span>
+        </header>
+        <div class="entry-detail">
+          <p class="body-copy">{experience.summary}</p>
+          <ul class="tag-list" aria-label={experience.technologiesLabel}>
+            {experience.technologies.map(technology => <li>{technology}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+.content-title {
+  color: #4fc8ae;
+}
+
+.experience-entry {
+  border-top: 1px solid var(--border);
+}
+
+.entry-summary {
+  display: grid;
+  gap: 8px;
+  padding: 20px 0;
+}
+
+.entry-summary h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.entry-company {
+  color: var(--copy);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.entry-detail {
+  padding-bottom: 24px;
+}
+
+.entry-detail .tag-list {
+  margin-top: 16px;
+}
+</style>

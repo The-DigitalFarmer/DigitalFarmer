@@ -1,14 +1,14 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../sections/Hero.astro';
-import Skills from '../sections/Skills.astro';
-import About from '../sections/About.astro';
-import Projects from '../sections/Projects.astro';
-import Experience from '../sections/Experience.astro';
-import Contact from '../sections/Contact.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/sections/home/Hero.astro';
+import Skills from '@/sections/skills/Skills.astro';
+import About from '@/sections/about/About.astro';
+import Projects from '@/sections/projects/Projects.astro';
+import Experience from '@/sections/experience/Experience.astro';
+import Contact from '@/sections/contact/Contact.astro';
 ---
 
-<BaseLayout>
+<BaseLayout title="Yerson - Profile">
   <Hero slot="home" />
   <Skills />
   <About />

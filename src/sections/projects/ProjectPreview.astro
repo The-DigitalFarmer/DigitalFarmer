@@ -1,0 +1,38 @@
+---
+import type { Project } from './data';
+
+interface Props {
+  preview: Project['preview'];
+}
+
+const { preview } = Astro.props;
+---
+
+<div class="project-visual">
+  <img
+    src={preview.image.src}
+    alt={preview.alt}
+    width={preview.image.width}
+    height={preview.image.height}
+    loading="lazy"
+    decoding="async"
+  />
+</div>
+
+<style>
+.project-visual {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 32 / 15;
+  border-bottom: 1px solid var(--border);
+  background: #080b12;
+}
+
+.project-visual :global(img) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 32 / 15;
+  object-fit: cover;
+}
+</style>

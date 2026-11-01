@@ -1,0 +1,47 @@
+---
+import type { SkillIconName } from './data';
+import pythonLogo from '@/assets/python.svg?url';
+import fastapiLogo from '@/assets/fastapi.png?url';
+import postmanLogo from '@/assets/postman.svg?url';
+import dockerLogo from '@/assets/docker.png?url';
+import gitLogo from '@/assets/git.svg?url';
+import githubLogo from '@/assets/github-stack.svg?url';
+import vscodeLogo from '@/assets/vscode.png?url';
+import redisLogo from '@/assets/redis.png?url';
+import claudeCodeLogo from '@/assets/claude-code.svg?url';
+import codexLogo from '@/assets/codex.png?url';
+import cursorLogo from '@/assets/cursor.svg?url';
+import openCodeLogo from '@/assets/open-code.png?url';
+
+interface Props {
+  name: SkillIconName;
+}
+
+const { name } = Astro.props;
+const logoFiles: Record<SkillIconName, string> = {
+  python: pythonLogo,
+  fastapi: fastapiLogo,
+  postman: postmanLogo,
+  docker: dockerLogo,
+  git: gitLogo,
+  github: githubLogo,
+  vscode: vscodeLogo,
+  redis: redisLogo,
+  'claude-code': claudeCodeLogo,
+  codex: codexLogo,
+  cursor: cursorLogo,
+  'open-code': openCodeLogo,
+};
+---
+
+<img class="tool-logo" src={logoFiles[name]} alt="" aria-hidden="true" width="20" height="20" loading="lazy" decoding="async" />
+
+<style>
+.tool-logo {
+  display: block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+</style>
