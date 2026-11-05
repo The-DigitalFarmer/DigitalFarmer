@@ -1,7 +1,7 @@
 import type { ImageMetadata } from 'astro';
-import harvestImage from '@/assets/harvest-api-vintage-no-text.png';
-import flowforgeImage from '@/assets/flowforge-vintage-no-text.png';
-import atlasImage from '@/assets/atlas-ai-vintage-no-text.png';
+import harvestImage from '@/assets/png/harvest-api-vintage-no-text.png';
+import flowforgeImage from '@/assets/png/flowforge-vintage-no-text.png';
+import atlasImage from '@/assets/png/atlas-ai-vintage-no-text.png';
 
 export interface Project {
   id: string;
