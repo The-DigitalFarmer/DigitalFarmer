@@ -1,7 +1,7 @@
 import type { ImageMetadata } from 'astro';
-import harvestImage from '@/assets/png/harvest-api-vintage-no-text.png';
-import flowforgeImage from '@/assets/png/flowforge-vintage-no-text.png';
-import atlasImage from '@/assets/png/atlas-ai-vintage-no-text.png';
+import harvestApiImage from '@/assets/png/harvest-api.png';
+import flowforgeImage from '@/assets/png/flowforge.png';
+import atlasAiImage from '@/assets/png/atlas-ai.png';
 
 export interface Project {
   id: string;
@@ -21,7 +21,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    "id": "project-title-1",
+    "id": "harvest-api-title",
     "name": "Harvest API",
     "suffix": "",
     "kind": "REST API · BACKEND",
@@ -36,12 +36,12 @@ export const projects: Project[] = [
     "websiteUrl": "https://github.com/The-DigitalFarmer",
     "detail": "Inventario y pedidos conectados mediante una API modular. Autenticación, caché y documentación en un mismo lugar.",
     "preview": {
-      "image": harvestImage,
+      "image": harvestApiImage,
       "alt": "Cartel vintage de Harvest API sobre papel crema envejecido, con un servidor conectado a inventario, compras, entregas y una base de datos en tintas azul marino y rojo."
     }
   },
   {
-    "id": "project-title-2",
+    "id": "flowforge-title",
     "name": "Flowforge",
     "suffix": ".",
     "kind": "AUTOMATIZACIÓN · WORKFLOWS",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     }
   },
   {
-    "id": "project-title-3",
+    "id": "atlas-ai-title",
     "name": "Atlas AI",
     "suffix": ".",
     "kind": "INTELIGENCIA ARTIFICIAL · RAG",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     "websiteUrl": "https://github.com/The-DigitalFarmer",
     "detail": "Un asistente de consulta documental con búsqueda semántica. Recupera fragmentos relevantes y acompaña cada respuesta con sus fuentes.",
     "preview": {
-      "image": atlasImage,
+      "image": atlasAiImage,
       "alt": "Cartel vintage de Atlas AI sobre papel crema envejecido, con documentos, una red de conocimiento, una base de datos y una lupa en tintas azul marino y rojo."
     }
   }

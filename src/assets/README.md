@@ -9,7 +9,7 @@ Los recursos se organizan por formato:
 
 ## Logos sociales
 
-SVG locales utilizados por `src/components/ui/SocialLogo.astro`. Se conservan las formas y los colores de las fuentes oficiales; no se aplican máscaras CSS ni degradados adicionales.
+SVG locales utilizados por `src/components/ui/SocialLogo.astro`. El logo `svg/github.svg` también se reutiliza en `src/sections/skills/SkillIcon.astro`. Se conservan las formas y los colores de las fuentes oficiales; no se aplican máscaras CSS ni degradados adicionales.
 
 | Archivo | Fuente oficial | Recurso |
 | --- | --- | --- |

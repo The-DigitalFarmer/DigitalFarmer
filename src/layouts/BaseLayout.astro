@@ -3,7 +3,7 @@ import '@/styles/global.css';
 import '@/styles/sections.css';
 import Header from '@/components/layout/Header.astro';
 import Footer from '@/components/layout/Footer.astro';
-import mascotUrl from '@/assets/svg/personaje-cabeza-cabello.svg?url';
+import avatarUrl from '@/assets/svg/avatar.svg?url';
 
 interface Props {
   title?: string;
@@ -24,7 +24,7 @@ const {
     <meta name="theme-color" content="#120e20" />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <link rel="icon" href={mascotUrl} type="image/svg+xml" />
+    <link rel="icon" href={avatarUrl} type="image/svg+xml" />
   </head>
   <body>
     <a class="skip-link" href="#inicio">Ir al contenido</a>

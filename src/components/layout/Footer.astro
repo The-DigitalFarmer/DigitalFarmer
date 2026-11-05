@@ -1,6 +1,6 @@
 ---
-import footerPlatypus from '@/assets/png/ornitorrinco-fondo-salvia.png';
-import mascotUrl from '@/assets/svg/personaje-cabeza-cabello.svg?url';
+import ornitorrincoImage from '@/assets/png/ornitorrinco.png';
+import avatarUrl from '@/assets/svg/avatar.svg?url';
 
 const year = new Date().getFullYear();
 const sections = [
@@ -20,7 +20,7 @@ const channels = [
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#inicio" aria-label="DigitalFarmer, inicio"><img src={mascotUrl} alt="" width="44" height="44" /><strong>DigitalFarmer</strong></a>
+      <a href="#inicio" aria-label="DigitalFarmer, inicio"><img src={avatarUrl} alt="" width="44" height="44" /><strong>DigitalFarmer</strong></a>
       <p>Python, APIs y automatización</p>
     </div>
     <nav class="footer-column" aria-label="Explorar el portafolio">
@@ -36,7 +36,7 @@ const channels = [
     <span class="footer-name">OrnitorCode Foundation</span>
     <span class="footer-copyright">© <span id="year">{year}</span></span>
     <a class="footer-back-top" href="#inicio">
-      <img class="footer-platypus" src={footerPlatypus.src} alt="" width="32" height="24" loading="lazy" decoding="async" />
+      <img class="footer-ornitorrinco" src={ornitorrincoImage.src} alt="" width="32" height="24" loading="lazy" decoding="async" />
       <span>Volver al inicio <span aria-hidden="true">↑</span></span>
     </a>
   </div>
@@ -145,7 +145,7 @@ const channels = [
   font: 400 12px/1 ui-monospace, 'SF Mono', 'Fira Code', 'JetBrains Mono', Menlo, monospace;
 }
 
-.footer-platypus {
+.footer-ornitorrinco {
   display: block;
   flex-shrink: 0;
   width: 16px;
