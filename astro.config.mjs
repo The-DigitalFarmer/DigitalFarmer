@@ -10,9 +10,7 @@ export default defineConfig({
       assetsInlineLimit: 0,
       rolldownOptions: {
         output: {
-          assetFileNames: ({ names }) => names.some(name => name.endsWith('.css'))
-            ? 'assets/styles.css'
-            : 'assets/[name][extname]',
+          assetFileNames: 'assets/[name].[hash][extname]',
           entryFileNames: ({ name }) => `assets/${name.split('.astro')[0].toLowerCase()}.[hash].js`,
         },
       },
