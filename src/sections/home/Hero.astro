@@ -1,7 +1,7 @@
 ---
 import HeroAtmosphere from './HeroAtmosphere.astro';
 import SocialLogo from '@/components/ui/SocialLogo.astro';
-import portrait from '@/assets/png/me.png';
+import gilfoyleUrl from '@/assets/svg/gilfoyle.svg?url';
 ---
 
 <section id="inicio" class="hero" aria-labelledby="hero-title">
@@ -25,7 +25,7 @@ import portrait from '@/assets/png/me.png';
         <div class="profile-orbit" aria-hidden="true"></div>
         <div class="profile-bottom"><span class="profile-name">YERSON CABRERA LANDA</span></div>
       </div>
-      <img class="characters" src={portrait.src} width="1254" height="1254" alt="Un aventurero con gorro blanco y espada dorada junto a su compañero, un perro naranja, en pixel art." fetchpriority="high" />
+      <img class="characters" src={gilfoyleUrl} width="600" height="820" alt="Gilfoyle con gafas, cabello largo y camisa a cuadros." fetchpriority="high" />
     </div>
   </div>
 </section>
@@ -150,8 +150,8 @@ h1 {
 
 .characters {
   position: absolute;
-  height: auto;
-  image-rendering: pixelated;
+  height: 100%;
+  object-fit: contain;
   filter: drop-shadow(0 15px 5px #0e0b2080);
   animation: float 6s ease-in-out infinite;
   z-index: 1;
