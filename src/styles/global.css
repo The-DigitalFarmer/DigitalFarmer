@@ -1,6 +1,6 @@
 @font-face {
   font-family: Switzer;
-  src: url('../assets/woff2/switzer-regular.woff2') format('woff2');
+  src: url('/assets/woff2/switzer-regular.woff2') format('woff2');
   font-display: swap;
   font-weight: 400;
   font-style: normal;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: Switzer;
-  src: url('../assets/woff2/switzer-bold.woff2') format('woff2');
+  src: url('/assets/woff2/switzer-bold.woff2') format('woff2');
   font-display: swap;
   font-weight: 700;
   font-style: normal;
@@ -16,14 +16,14 @@
 
 @font-face {
   font-family: Space;
-  src: url('../assets/ttf/space-mono.ttf') format('truetype');
+  src: url('/assets/ttf/space-mono.ttf') format('truetype');
   font-display: swap;
   font-weight: 400;
 }
 
 @font-face {
   font-family: Space;
-  src: url('../assets/ttf/space-mono-bold.ttf') format('truetype');
+  src: url('/assets/ttf/space-mono-bold.ttf') format('truetype');
   font-display: swap;
   font-weight: 700;
 }

@@ -1,7 +1,8 @@
 node_modules/
 dist/
 artifacts/
-.astro/
+.next/
+out/
 .DS_Store
 *.log
 .env
