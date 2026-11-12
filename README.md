@@ -1,151 +1,138 @@
 # DigitalFarmer
 
-Portafolio de Yerson construido con Python, plantillas HTML y PyScript.
-Conserva las seis secciones, el diseño adaptable y las imágenes locales del
-portafolio, con una nueva paleta y tipografía basadas en aprenderust.dev.
+Portafolio personal de **Yerson Cabrera Landa**, enfocado en desarrollo backend,
+APIs y automatización con Python.
 
-## Desarrollo local
+El sitio combina HTML generado con Python y Jinja2 con interacciones escritas en
+Python mediante PyScript. Se publica como una web estática y mantiene separados
+el contenido, las plantillas, los estilos y la lógica del navegador.
 
-Requiere Python 3.10 o posterior.
+[GitHub](https://github.com/The-DigitalFarmer) ·
+[LinkedIn](https://www.linkedin.com/in/yerson-cabrera-88439b401/)
+
+## Características
+
+- Secciones de presentación, habilidades, enfoque de trabajo, proyectos,
+  experiencia y contacto.
+- Temas claro y oscuro con preferencia del sistema y elección guardada.
+- Navegación adaptable con sección activa, cierre con Escape y acceso por teclado.
+- Fondo ASCII animado que respeta el movimiento reducido y se pausa fuera de pantalla.
+- Contenido y enlaces disponibles mientras carga PyScript o si el runtime falla.
+- Datos editables en módulos Python y fuentes e imágenes servidas localmente.
+- CSS organizado por componentes y compilado en dos hojas minificadas.
+
+## Tecnologías
+
+| Tecnología | Uso |
+| --- | --- |
+| Python 3.10+ | Generación del sitio, servidor de desarrollo y pruebas. |
+| Jinja2 | Plantillas HTML con escape automático de contenido. |
+| PyScript 2026.7.3 | Ejecución de Python en el navegador. |
+| Pyodide 0.29.0 | Intérprete de Python sobre WebAssembly. |
+| HTML y CSS | Estructura, diseño adaptable y temas. |
+| RCSSmin | Minificación del CSS durante la compilación. |
+
+Las dependencias de compilación están fijadas en [requirements.txt](requirements.txt).
+El runtime del navegador se configura en [static/pyscript.json](static/pyscript.json).
+
+## Ejecutar en local
+
+Necesitas Python 3.10 o posterior y un navegador moderno. La primera carga de
+las interacciones requiere conexión a los CDN de PyScript y jsDelivr.
+
+### 1. Clonar el repositorio
+
+```sh
+git clone https://github.com/The-DigitalFarmer/DigitalFarmer.git
+cd DigitalFarmer
+```
+
+### 2. Crear y activar el entorno virtual
+
+En macOS o Linux:
 
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
+```
+
+En Windows con PowerShell:
+
+```powershell
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+### 3. Instalar dependencias e iniciar el servidor
+
+```sh
 python -m pip install -r requirements.txt
 python serve.py
 ```
 
-Abre <http://127.0.0.1:3000>. Cada recarga de la página vuelve a generar el sitio,
-por lo que los cambios en datos, plantillas, estilos y módulos Python se ven al
-actualizar el navegador. Detén el servidor con `Ctrl+C`.
+Abre [http://127.0.0.1:3000](http://127.0.0.1:3000).
+El servidor regenera el sitio al recargar la página para mostrar los cambios en
+datos, plantillas, estilos y módulos Python. Para detenerlo, pulsa `Ctrl+C`.
 
-Para usar otro puerto:
+Puedes elegir otro puerto:
 
 ```sh
 python serve.py --port 8000
 ```
 
-## Cómo está organizado
+## Estructura
 
-| Ruta | Responsabilidad |
+```text
+DigitalFarmer/
+├── portfolio/
+│   ├── data/              # Habilidades, enfoque, proyectos y experiencia
+│   ├── site.py            # Metadatos, navegación y rutas de logos
+│   └── styles.py          # Orden y compilación del CSS
+├── templates/
+│   ├── components/        # Cabecera, pie y elementos compartidos
+│   ├── sections/          # Plantillas de las seis secciones
+│   └── index.html         # Estructura principal
+├── static/
+│   ├── python/            # Navegación, temas, animación y gestión de eventos
+│   ├── styles/            # CSS fuente y paletas
+│   └── pyscript.json      # Intérprete y módulos del navegador
+├── public/assets/         # Imágenes, logos, fuentes y sus licencias
+├── docs/                  # Referencia visual y revisión de PyScript
+├── tests/                 # Pruebas automatizadas
+├── build.py               # Generación de dist/
+├── serve.py               # Servidor de desarrollo
+├── requirements.txt       # Dependencias de Python
+└── vercel.json            # Configuración de despliegue
+```
+
+`dist/`, `.venv/` y `__pycache__/` son directorios locales generados y están
+excluidos de Git.
+
+## Personalizar
+
+| Qué cambiar | Archivo o directorio |
 | --- | --- |
-| `portfolio/data/` | Textos y datos de About, proyectos, habilidades y experiencia. |
-| `portfolio/site.py` | Metadatos, navegación, enlaces sociales y rutas de logos. |
-| `portfolio/styles.py` | Orden de las hojas CSS y compilación de los dos archivos publicados. |
-| `templates/index.html` | Estructura general y orden de las secciones. |
-| `templates/sections/` | Una plantilla HTML por sección. |
-| `templates/components/` | Cabecera, pie, fondo ASCII y macro de logos sociales. |
-| `static/python/navigation.py` | Menú móvil, cierre con Escape y sección activa al hacer scroll. |
-| `static/python/atmosphere.py` | Reproducción de la animación; respeta movimiento reducido y visibilidad. |
-| `static/python/theme.py` | Selector claro/oscuro, preferencia local y sincronización con el sistema. |
-| `static/python/ascii_art.py` | Cálculo del dibujo ASCII, compartido por la compilación y el navegador. |
-| `static/python/main.py` | Inicio, suspensión y reactivación de las interacciones con PyScript. |
-| `static/python/browser_events.py` | Registro y desconexión de eventos con liberación de proxies. |
-| `static/styles/` | CSS global y archivos separados para cada sección o componente. |
-| `static/styles/theme.css` | Paleta clara, fuentes, radios y estados visuales compartidos. |
-| `static/styles/theme-dark.css` | Paleta y estados del modo oscuro. |
-| `static/pyscript.json` | Intérprete y módulos que PyScript carga en el navegador. |
-| `public/assets/` | Imágenes, logos y fuentes. |
-| `build.py` | Generación del sitio estático con Python y Jinja2. |
-| `serve.py` | Servidor de desarrollo con regeneración al recargar. |
-| `dist/` | Resultado generado para publicar; no se edita a mano. |
+| Título, descripción, enlaces y logos | [portfolio/site.py](portfolio/site.py) |
+| Habilidades y nombres de herramientas | [portfolio/data/skills.py](portfolio/data/skills.py) |
+| Enfoque de trabajo y enlace al CV | [portfolio/data/about.py](portfolio/data/about.py) |
+| Proyectos, imágenes y enlaces | [portfolio/data/projects.py](portfolio/data/projects.py) |
+| Experiencia | [portfolio/data/experience.py](portfolio/data/experience.py) |
+| Textos y estructura de cada sección | [templates/sections/](templates/sections/) |
+| Paleta clara y tipografía | [static/styles/theme.css](static/styles/theme.css) |
+| Paleta oscura | [static/styles/theme-dark.css](static/styles/theme-dark.css) |
+| Interacciones del navegador | [static/python/](static/python/) |
 
-Para cambiar contenido, edita los diccionarios y listas de `portfolio/data/`.
-Los nombres de habilidades están en `portfolio/data/skills.py`. El campo `icon`
-identifica una entrada de `TOOL_LOGOS` en `portfolio/site.py`; ese mapa solo
-contiene rutas de imágenes. Si el icono está vacío, no está configurado o su
-archivo fue eliminado, se muestra el nombre de la habilidad sin imagen.
+Para activar el botón del CV, asigna una URL pública a `CV_URL` en
+`portfolio/data/about.py`. Los enlaces de proyecto con URL vacía se muestran
+como pendientes.
 
-Para agregar un proyecto, copia una entrada de `portfolio/data/projects.py` y
-actualiza sus datos y su imagen. Configura `CV_URL` en `portfolio/data/about.py`
-para activar el botón del CV. Una URL de proyecto vacía muestra el enlace como
-pendiente y lo retira de la navegación con teclado.
+En las habilidades, `name` es el nombre visible e `icon` identifica una entrada
+de `TOOL_LOGOS`. Si el logo no está configurado o su archivo no existe, se muestra
+solo el nombre de la herramienta.
 
-Los temas claro y oscuro toman la paleta y las fuentes de [aprenderust.dev](https://aprenderust.dev/).
-La extracción y su aplicación están documentadas en [docs/design-reference.md](docs/design-reference.md).
-Las fuentes se sirven localmente y sus licencias están en `public/assets/fonts/`.
-Para cambiar colores o tipografías, edita `static/styles/theme.css` y sus valores
-oscuros en `static/styles/theme-dark.css`.
+Los estilos fuente permanecen legibles. `global.css` contiene las bases
+compartidas y `sections.css` reúne tarjetas y paneles. Si agregas una hoja,
+regístrala en `APP_STYLE_FILES` de `portfolio/styles.py`.
 
-El botón de sol/luna de la cabecera permite cambiar de tema y guarda la elección
-en el navegador. Hasta elegir uno, el sitio sigue la preferencia del sistema,
-también si cambia durante la visita. La hoja oscura usa una consulta de medios,
-por lo que el tema del sistema funciona incluso sin PyScript. Al iniciarse Python,
-se aplica cualquier elección guardada. El selector funciona sin persistencia si
-el navegador bloquea el almacenamiento local.
-
-Para cambiar el diseño, edita la plantilla y el CSS de la sección. Las plantillas
-usan bucles y condiciones de Jinja2; los datos se escapan automáticamente al
-generar HTML. La lógica de interacción está escrita en Python con nombres
-descriptivos y comentarios en español.
-
-Los tres componentes del navegador tienen métodos `start()` y `stop()`.
-Iniciarlos varias veces no duplica eventos. Al salir de la página se desconectan
-eventos y observadores, se cancelan fotogramas pendientes y se liberan los proxies
-de Python. Al volver con Atrás/Adelante se reactivan. Si se retira el HTML de un
-componente, su inicialización se omite y los demás siguen disponibles.
-La navegación usa un único evento para el logo y los enlaces del menú.
-Los elementos devueltos por el DOM se comprueban con `pyscript.ffi.is_none`,
-que reconoce tanto `None` como `JsNull` del intérprete del navegador.
-El resumen de la revisión está en [docs/pyscript-review.md](docs/pyscript-review.md).
-
-El CSS de `static/styles/` permanece legible. `global.css` contiene las bases de
-botones, títulos e iconos; `sections.css` comparte tarjetas y paneles. Cada sección
-conserva sus reglas particulares. Las tarjetas de proyectos están en `projects.css`.
-Al agregar una hoja, inclúyela en `APP_STYLE_FILES` de `portfolio/styles.py`.
-
-La compilación utiliza RCSSmin y genera únicamente dos hojas: `app.<hash>.min.css`
-y `dark.<hash>.min.css`. La segunda sigue siendo conmutable con el selector de tema.
-El hash cambia cuando cambia el contenido, evitando reutilizar estilos obsoletos.
-Las hojas antiguas de `dist/styles/` se retiran automáticamente. Edita siempre los
-archivos fuente; no los `.min.css` generados.
-
-## Qué ejecuta el navegador
-
-`build.py` genera todo el contenido como HTML antes de publicarlo. La página y
-sus enlaces ya se pueden usar mientras carga Python, incluso si PyScript no
-llega a estar disponible. En móvil, la navegación se muestra directamente hasta
-que se activa el menú interactivo.
-
-[PyScript 2026.7.3](https://pyscript.net/releases/2026.7.3/) carga Python en el
-navegador mediante Pyodide 0.29.0. Python controla el DOM, los eventos y la
-animación. No se necesita un servidor Python en producción. La primera visita
-descarga el runtime desde los CDN de PyScript y jsDelivr, por lo que las
-interacciones requieren conexión a esos servicios. Los estilos, fuentes,
-imágenes y el primer fotograma ASCII se sirven con el sitio.
-
-Las versiones están fijadas en `portfolio/site.py` y `static/pyscript.json`.
-Consulta la [configuración oficial de PyScript](https://docs.pyscript.net/2026.7.3/user-guide/configuration/)
-antes de actualizar el intérprete o agregar módulos al navegador.
-
-## Compilar y publicar
-
-Con el entorno virtual activo:
-
-```sh
-python build.py
-```
-
-Publica el contenido de `dist/` en un alojamiento estático. Las rutas de recursos
-parten de `/`, por lo que el sitio debe servirse en la raíz del dominio.
-El servidor de desarrollo solo expone `dist/`, no las plantillas ni los datos
-de compilación.
-
-`vercel.json` configura la instalación con pip, la compilación con Python y la
-salida `dist/`. El preset de framework es `null`. Si el proyecto de Vercel tiene
-ajustes manuales anteriores, usa esos mismos valores al desplegar. No se ha
-realizado ningún despliegue desde esta migración.
-
-## Verificaciones
-
-```sh
-python -m unittest discover -s tests -v
-```
-
-Las pruebas verifican la generación del HTML, los recursos y enlaces internos,
-el escape de contenido, los estados del CV y de los enlaces pendientes, el
-generador ASCII, la compilación del CSS con sus hashes y la correspondencia entre
-los módulos usados y la configuración de PyScript. Para revisar las
-interacciones, inicia `serve.py` y comprueba
-el menú móvil, Escape, la sección activa al desplazarte, el selector de tema,
-la persistencia al recargar y la preferencia de movimiento reducido del navegador.
+Al agregar un módulo Python para el navegador, impórtalo desde el código que lo
+utiliza y registra su archivo en `static/pyscript.json`.
