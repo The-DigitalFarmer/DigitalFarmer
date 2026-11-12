@@ -1,0 +1,36 @@
+{% from "components/macros.html" import social_logo %}
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ description }}">
+    <meta name="theme-color" content="#ffffff">
+    <title>{{ title }}</title>
+    <link rel="icon" href="/assets/svg/avatar.svg">
+    <link rel="stylesheet" href="https://pyscript.net/releases/{{ pyscript_version }}/core.css">
+    <link rel="preload" href="/assets/fonts/fira-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/alfa-slab-one.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{ styles.app }}">
+    <link id="dark-theme-styles" rel="stylesheet" href="{{ styles.dark }}" media="(prefers-color-scheme: dark)">
+    <script type="module" src="https://pyscript.net/releases/{{ pyscript_version }}/core.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#inicio">Ir al contenido</a>
+    {% include "components/header.html" %}
+    <main>
+      {% include "sections/home.html" %}
+      <div class="content-frame">
+        {% include "sections/skills.html" %}
+        {% include "sections/about.html" %}
+        {% include "sections/projects.html" %}
+        {% include "sections/experience.html" %}
+        {% include "sections/contact.html" %}
+      </div>
+    </main>
+    <div class="content-frame">
+      {% include "components/footer.html" %}
+    </div>
+    <script type="py" src="/python/main.py" config="/pyscript.json"></script>
+  </body>
+</html>

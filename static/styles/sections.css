@@ -1,0 +1,138 @@
+/* Fondos de sección y separadores que se extienden a todo el ancho. */
+
+.section-surface {
+  position: relative;
+  isolation: isolate;
+  border-bottom: 1px solid transparent;
+}
+
+.section-surface::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  width: 100vw;
+  translate: -50% 0;
+  border-bottom: 1px solid var(--line);
+  pointer-events: none;
+}
+
+.section-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--page-bg);
+}
+
+/* Componentes compartidos de las secciones centrales. */
+.content-section {
+  padding: clamp(48px, 5vw, 72px) var(--section-gutter);
+  scroll-margin-top: var(--anchor-offset);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(28px, 4vw, 60px);
+}
+
+.content-grid > *,
+.project-card > * {
+  min-width: 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.section-kicker,
+.caption {
+  color: var(--rust-strong);
+  font: 500 11px/1.6 var(--font-mono);
+  letter-spacing: .08em;
+}
+
+.section-kicker {
+  margin: 0 0 24px;
+}
+
+.content-title {
+  margin: 0 0 16px;
+  font-size: clamp(28px, 3vw, 36px);
+  text-wrap: balance;
+}
+
+/* Tarjetas y paneles compartidos por varias secciones. */
+.stack-branch,
+.focus-card,
+.project-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--card-bg);
+  transition: background-color var(--motion-duration), border-color var(--motion-duration);
+}
+
+.stack-branch:hover,
+.focus-card:hover,
+.project-card:hover,
+.project-card:focus-within {
+  background: var(--rust-soft);
+  border-color: var(--rust-line);
+}
+
+.profile-frame,
+.stack-root,
+.focus-intro {
+  border-radius: var(--radius-feature);
+  background: radial-gradient(70% 90% at 0% 50%, var(--rust-glow), transparent 70%), var(--surface);
+}
+
+.body-copy {
+  margin: 0;
+  color: var(--copy);
+  overflow-wrap: anywhere;
+}
+
+.caption {
+  color: var(--copy);
+  letter-spacing: .5px;
+}
+
+.tag-list,
+.stack-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list {
+  margin: 24px 0 0;
+  color: var(--copy);
+}
+
+.stack-tools {
+  margin: 0;
+}
+
+.stack-badge,
+.tag-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 12px;
+}

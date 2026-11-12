@@ -1,0 +1,34 @@
+<section class="projects-section content-section section-surface" id="proyectos" aria-labelledby="projects-title">
+  <p class="section-kicker">PROJECTS</p>
+  <div class="section-header">
+    <h2 class="content-title" id="projects-title">Projects in Production</h2>
+    <a class="projects-all" href="https://github.com/The-DigitalFarmer?tab=repositories"
+       target="_blank" rel="noopener noreferrer">Ver todos <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="projects-grid">
+    {% for project in projects %}
+    <article class="project-card" aria-labelledby="{{ project.id }}">
+      <div class="project-visual">
+        <img src="{{ project.preview.image.src }}" alt="{{ project.preview.alt }}"
+             width="{{ project.preview.image.width }}" height="{{ project.preview.image.height }}"
+             loading="lazy" decoding="async">
+      </div>
+      <div class="project-copy">
+        <p class="project-kind">{{ project.kind }}</p>
+        <h3 id="{{ project.id }}">{{ project.name }}{% if project.suffix %}<span>{{ project.suffix }}</span>{% endif %}</h3>
+        <p class="body-copy">{{ project.description }}</p>
+        <div class="project-actions">
+          {% for label, url in [('Repositorio', project.repository_url), ('Ver web', project.website_url)] %}
+          <a class="project-link"
+             {% if url %}href="{{ url }}" target="_blank" rel="noopener noreferrer"
+             {% else %}role="link" aria-disabled="true" tabindex="-1"{% endif %}
+             aria-label="{{ label }} de {{ project.name }}{% if not url %} (enlace pendiente){% endif %}">
+            {{ label }} <span aria-hidden="true">↗</span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<section class="skills-section content-section section-surface" id="habilidades" aria-labelledby="skills-title">
+  <p class="section-kicker">SKILLS</p>
+  <div class="stack-root">
+    <img class="skills-avatar" src="/assets/svg/avatar.svg"
+         alt="Personaje crema con cuernos curvos y ojos negros."
+         width="1000" height="1195" loading="lazy" decoding="async">
+    <h2 id="skills-title">Stack</h2>
+    <p>Herramientas que convierten ideas en código</p>
+  </div>
+  <div class="stack-network">
+    {% for group in skill_groups %}
+    <div class="stack-branch">
+      <h3>{{ group.label }}</h3>
+      <p class="stack-description">{{ group.description }}</p>
+      <ul class="stack-tools" aria-label="{{ group.aria_label }}">
+        {% for tool in group.tools %}
+        <li class="stack-badge">
+          {% set logo_url = tool_logos.get(tool.get('icon', '')) %}
+          {% if logo_url %}
+          <img class="tool-logo" src="{{ logo_url }}" alt="" aria-hidden="true"
+               width="20" height="20" loading="lazy" decoding="async">
+          {% endif %}
+          <span>{{ tool.name }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>

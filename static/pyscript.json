@@ -1,0 +1,10 @@
+{
+  "interpreter": "https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.mjs",
+  "files": {
+    "./python/browser_events.py": "./browser_events.py",
+    "./python/theme.py": "./theme.py",
+    "./python/navigation.py": "./navigation.py",
+    "./python/atmosphere.py": "./atmosphere.py",
+    "./python/ascii_art.py": "./ascii_art.py"
+  }
+}

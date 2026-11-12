@@ -1,0 +1,26 @@
+<section class="experience-section content-section section-surface" id="experiencia" aria-labelledby="experience-title">
+  <p class="section-kicker">EXPERIENCE</p>
+  <div class="section-header">
+    <h2 class="content-title" id="experience-title">I was born programming</h2>
+    <span class="caption">DISPONIBLE</span>
+  </div>
+  <div class="content-grid">
+    {% for experience in experiences %}
+    <article class="experience-entry">
+      <header class="entry-summary">
+        <span class="caption">{{ experience.dates }}</span>
+        <h3>{{ experience.title }}</h3>
+        <span class="entry-company">{{ experience.company }} <span>{{ experience.arrangement }}</span></span>
+      </header>
+      <div class="entry-detail">
+        <p class="body-copy">{{ experience.summary }}</p>
+        <ul class="tag-list" aria-label="{{ experience.technologies_label }}">
+          {% for technology in experience.technologies %}
+          <li>{{ technology }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,44 @@
+/* Valores extraídos del modo oscuro de https://aprenderust.dev/.
+   La hoja se activa por preferencia del sistema o desde theme.py. */
+
+:root {
+  color-scheme: dark;
+
+  --page-bg: #0d0b0a;
+  --surface: #110f0d;
+  --card-bg: #141210;
+  --text: #ece6e0;
+  --copy: #b0a69e;
+  --muted: #9c928a;
+  --line: #262220;
+  --line-strong: #332e2a;
+  --line-hover: #57504a;
+  --surface-hover: #1a1714;
+
+  --rust-strong: #ff6a1f;
+  --rust-soft: #f74c001f;
+  --rust-line: #f74c0059;
+  --selection-bg: #f74c0059;
+  --selection-text: #fff;
+
+  --primary-bg: #f74c00;
+  --primary-hover: #ff6a1f;
+  --primary-text: #0d0b0a;
+  --primary-shadow: 0 1px 14px #f74c004d;
+  --secondary-border: #332e2a;
+  --secondary-hover-bg: #1a1714;
+  --github-filter: none;
+  --theme-toggle-text: #d6d3d1;
+  --theme-toggle-hover-text: #ff8a4c;
+  --theme-toggle-hover-bg: #f74c001a;
+  --theme-toggle-hover-border: #f74c0066;
+  --active-nav-bg: #1c120d;
+  --active-nav-line: #4a2412;
+  --active-nav-text: #fff;
+  --scrollbar-thumb: #262220;
+
+  --closing-bg: #141210;
+  --closing-outline: #262220;
+  --character-shadow: #000c;
+  --grid-color: #ece6e00d;
+}

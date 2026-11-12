@@ -1,0 +1,122 @@
+/* Referencia: https://aprenderust.dev/ — consultado el 11-11-2026.
+   Tema claro y fuentes compartidas. Los valores oscuros están en theme-dark.css. */
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('/assets/fonts/fira-sans-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('/assets/fonts/fira-sans-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('/assets/fonts/fira-sans-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('/assets/fonts/fira-sans-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  src: url('/assets/fonts/fira-mono-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  src: url('/assets/fonts/fira-mono-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alfa Slab One';
+  src: url('/assets/fonts/alfa-slab-one.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --font-sans: 'Fira Sans', system-ui, sans-serif;
+  --font-mono: 'Fira Mono', ui-monospace, monospace;
+  --font-display: 'Alfa Slab One', Georgia, serif;
+
+  --page-bg: #fff;
+  --surface: #fafaf9;
+  --card-bg: #fff;
+  --text: #1c1917;
+  --copy: #57534e;
+  --muted: #6b635d;
+  --line: #e7e5e4;
+  --line-strong: #d6d3d1;
+  --line-hover: #a8a29e;
+  --surface-hover: #f5f5f4;
+
+  --rust: #f74c00;
+  --rust-strong: #c2410c;
+  --rust-soft: #fff4ed;
+  --rust-line: #fed7aa;
+  --on-rust: #fff;
+  --rust-glow: #f74c001f;
+  --selection-bg: #ffd8c2;
+  --selection-text: #1c1917;
+
+  --primary-bg: #c2410c;
+  --primary-hover: #9a3412;
+  --primary-text: #fff;
+  --secondary-border: #e7e5e4;
+  --secondary-hover-bg: #fff;
+  --github-filter: brightness(0);
+  --theme-toggle-text: #57534e;
+  --theme-toggle-hover-text: #c2410c;
+  --theme-toggle-hover-bg: #fff4ed;
+  --theme-toggle-hover-border: #fed7aa;
+  --active-nav-bg: #fff4ed;
+  --active-nav-line: #fed7aa;
+  --active-nav-text: #7c2d12;
+  --scrollbar-thumb: #d6d3d1;
+
+  /* La sección de contacto toma el panel oscuro de cierre de la referencia. */
+  --closing-bg: #1c1917;
+  --closing-outline: transparent;
+  --closing-card: #141210;
+  --closing-hover: #1a1714;
+  --closing-text: #ece6e0;
+  --closing-muted: #b0a69e;
+  --closing-line: #332e2a;
+  --closing-line-hover: #57504a;
+  --closing-accent-hover: #ff6a1f;
+  --closing-link: #ff8a4c;
+  --on-bright-rust: #0d0b0a;
+
+  --radius-button: .6rem;
+  --radius-card: 1rem;
+  --radius-feature: 1.25rem;
+  --motion-duration: .15s;
+  --primary-shadow: 0 1px 10px #c2410c40;
+  --character-shadow: #1c191726;
+  --grid-color: #78716c17;
+  --grid-spacing: 32px;
+}

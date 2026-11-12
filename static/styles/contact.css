@@ -1,0 +1,168 @@
+/* Cierre del portafolio: introducción y canales de contacto, sin ilustraciones. */
+.contact-section {
+  --text: var(--closing-text);
+  --copy: var(--closing-muted);
+  --muted: var(--closing-muted);
+  --line: var(--closing-line);
+  --page-bg: var(--closing-bg);
+  margin-block: 48px;
+  padding: clamp(32px, 5vw, 56px) var(--section-gutter);
+  color: var(--closing-text);
+  scroll-margin-top: var(--anchor-offset);
+}
+
+.contact-section::before {
+  background: var(--closing-bg);
+  box-shadow: inset 0 0 0 1px var(--closing-outline);
+  border-radius: var(--radius-feature);
+}
+
+.contact-section::after {
+  display: none;
+}
+
+.contact-section .section-kicker {
+  margin-bottom: 28px;
+  color: var(--closing-link);
+}
+
+.contact-section a:focus-visible {
+  outline-color: var(--closing-text);
+}
+
+.contact-section ::selection {
+  background: color-mix(in srgb, var(--rust) 35%, transparent);
+  color: var(--on-rust);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 48px);
+}
+
+.contact-copy {
+  min-width: 0;
+}
+
+.contact-copy h2 {
+  margin: 0 0 20px;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.contact-copy h2 > span {
+  color: var(--closing-link);
+}
+
+.contact-description {
+  max-width: 42ch;
+  margin: 0;
+  color: var(--closing-muted);
+  text-wrap: pretty;
+}
+
+.contact-channels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Se conservan los colores, radios y hover de los botones originales. */
+.contact-channel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 9px;
+  padding: 17px 16px;
+  border: 1px solid var(--closing-line);
+  border-radius: var(--radius-button);
+  background: var(--closing-card);
+}
+
+.channel-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  margin-bottom: 7px;
+}
+
+.channel-top > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.channel-top > span {
+  font-size: 19px;
+  line-height: 1;
+  opacity: .75;
+}
+
+.contact-channel > strong {
+  font-size: 13px;
+  letter-spacing: .2px;
+  line-height: 1.5;
+  color: var(--closing-text);
+}
+
+.channel-caption {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--closing-muted);
+}
+
+.contact-channel--gmail {
+  background: var(--rust);
+  border-color: var(--rust);
+}
+
+.contact-channel--gmail .channel-top,
+.contact-channel--gmail > strong,
+.contact-channel--gmail .channel-caption {
+  color: var(--on-bright-rust);
+}
+
+.contact-channel:hover {
+  background: var(--closing-hover);
+  border-color: var(--closing-line-hover);
+}
+
+.contact-channel--gmail:hover {
+  background: var(--closing-accent-hover);
+  border-color: var(--closing-accent-hover);
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .contact-description {
+    max-width: 52ch;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-channels {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .contact-channel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 16px;
+  }
+
+  .channel-top {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    gap: 16px;
+    margin: 0;
+  }
+}

@@ -4,12 +4,26 @@ Los recursos se organizan por formato:
 
 - `svg/`: ilustraciones y logos vectoriales.
 - `png/`: imágenes rasterizadas.
-- `ttf/`: fuentes TrueType.
-- `woff2/`: fuentes web WOFF2.
+- `fonts/`: fuentes WOFF2 y sus licencias SIL Open Font License.
+
+## Tipografías
+
+Fuentes extraídas de los recursos públicos de [aprenderust.dev](https://aprenderust.dev/)
+el 11 de noviembre de 2026, conservadas como archivos locales sin modificaciones:
+
+- Fira Sans: pesos 400, 500, 600 y 700 para textos y controles.
+- Fira Mono: pesos 400 y 500 para etiquetas y animación ASCII.
+- Alfa Slab One: peso 400 para títulos y marca.
+
+Las declaraciones `@font-face` están en `static/styles/theme.css`.
+Las licencias provienen del repositorio oficial de Google Fonts:
+[Fira Sans](https://github.com/google/fonts/blob/main/ofl/firasans/OFL.txt),
+[Fira Mono](https://github.com/google/fonts/blob/main/ofl/firamono/OFL.txt) y
+[Alfa Slab One](https://github.com/google/fonts/blob/main/ofl/alfaslabone/OFL.txt).
 
 ## Logos sociales
 
-SVG locales utilizados por `src/components/ui/SocialLogo.js`. El logo `svg/github.svg` también se reutiliza en `src/sections/skills/Skills.js`. Se conservan las formas y los colores de las fuentes oficiales; no se aplican máscaras CSS ni degradados adicionales.
+SVG locales utilizados por la macro `social_logo` de `templates/components/macros.html`. El logo `svg/github.svg` también se reutiliza en `templates/sections/skills.html`; su ruta está en `portfolio/site.py`. Se conservan las formas y los colores de las fuentes oficiales; no se aplican máscaras CSS ni degradados adicionales.
 
 | Archivo | Fuente oficial | Recurso |
 | --- | --- | --- |
